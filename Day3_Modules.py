@@ -93,11 +93,11 @@ def student_records(**kwargs):
         return result
     
 def show_time():
-    import time
+    import time as t
     try:
         while True:
-            print(time.asctime())
-            time.sleep(1)
+            print(t.asctime())
+            t.sleep(1)
             display(clear=True)
     except:
         print("Timer Stopped")
@@ -107,7 +107,7 @@ def voting(ages):
     #     print("Eligible")
     # else:
     #     print("Not eligible") 
-    print("Eligible") if age>=18 else print("Not Eligible") #one liner function
+    print("Eligible") if ages>=18 else print("Not Eligible") #one liner function
 
 def sound_box(amount, platform = "Paytm"):
     from gtts import gTTS
