@@ -82,6 +82,7 @@ def add_hashtag(*names):
     return result
 
 def student_records(**kwargs):
+    import pandas as pd
     #keys=list(kwargs) #Type Casting will provide us the keys of the dictionary
     
     try:
@@ -92,6 +93,7 @@ def student_records(**kwargs):
         return result
     
 def show_time():
+    import time
     try:
         while True:
             print(time.asctime())
@@ -99,3 +101,45 @@ def show_time():
             display(clear=True)
     except:
         print("Timer Stopped")
+
+def voting(ages):
+    # if ages>=18:
+    #     print("Eligible")
+    # else:
+    #     print("Not eligible") 
+    print("Eligible") if age>=18 else print("Not Eligible") #one liner function
+
+def sound_box(amount, platform = "Paytm"):
+    from gtts import gTTS
+    import pygame as p
+    # Text you want to convert to speech
+    text = (f"{platform} pe {amount} rupay prapt hue")
+
+    # Create gTTS object
+    speech = gTTS(text=text, slow=False)
+
+    # Save the audio file
+    speech.save("output.mp3")
+
+    print("Speech saved as output.mp3")
+
+    do=int(input("DO you want to listen to the audio?"))
+    if do==1:
+        p.init()
+        music=p.mixer.Sound('output.mp3')
+        music.play()
+    else:
+        print("Exiting")
+        
+def print_star(n = 5, typ = 'left',shape = '*'):
+  if typ  == 'left':
+    space  = ''
+
+  elif typ == 'right':
+    space = '  '
+
+  elif typ == 'mid':
+    space = ' '
+
+  for i in range(1,n+1):
+    print(space*(n-i) + i*f'{shape} ')
