@@ -142,4 +142,4 @@ def print_star(n = 5, typ = 'left',shape = '*'):
     space = ' '
 
   for i in range(1,n+1):
-    print(space*(n-i) + i*f'{shape} ')
+    print(space*(n-i) + i*f'{shape}')
